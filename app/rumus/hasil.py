@@ -1,7 +1,7 @@
 from .rules import rules1, rules2, rules3, rules4, rules5, rules6, rules7, rules8
 
 def inferensi(harga, jarak, waktu):
-    pilih = max(rules1(harga, jarak, waktu))
+    pilih = rules1(harga, jarak, waktu)  # Directly call the rule function
     pertimbangkan = max(rules2(harga, jarak, waktu), rules3(harga, jarak, waktu), rules5(harga, jarak, waktu))
     jangan = max(rules4(harga, jarak, waktu), rules6(harga, jarak, waktu), rules7(harga, jarak, waktu), rules8(harga, jarak, waktu))
 
