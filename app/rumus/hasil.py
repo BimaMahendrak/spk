@@ -64,7 +64,10 @@ def inferensi(harga, jarak, waktu):
     tA = sum(alpha)
     tZ = sum (zPredikat)
 
-    crips = tZ/tA
+    if tA != 0:
+        crips = tZ/tA
+    else:
+        crips = 1
 
     if crips < 5:
         return "Tidak Direkomendasikan", crips
