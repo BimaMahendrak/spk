@@ -1,18 +1,24 @@
-max = 60
-min = 0
+# range keseluruhan 0 - 32
+max_jarak = 32
+min_jarak = 0
+# range tengah 28 - 32 
+max_tengah = 32
+min_tengah = 28
 
 def dekat(jarak):
-    if jarak <= min:
-        return 1
-    elif jarak > min and jarak < max:
-        return (max-jarak)/(max-min)
+    # 0 - 32
+    if jarak <= min_tengah:
+        return 1.0
+    elif jarak >= max_tengah:
+        return 0.0
     else:
-        return 0
+        return (max_jarak-jarak)/(max_jarak-min_tengah)
     
 def jauh(jarak):
-    if jarak <= min:
-        return 0
-    elif jarak > min and jarak < max:
-        return (jarak-max)/(max-min)
+    # 28 - 60
+    if jarak <= max_tengah:
+        return 0.0
+    elif jarak >= max_jarak:
+        return 1.0
     else:
-        return 1
+        return (jarak-max_tengah)/(max_jarak-max_tengah)

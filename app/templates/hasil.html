@@ -48,7 +48,17 @@
       }
       .divider {
         border-top: 2px solid #0f4181;
-        margin: 20px 0;
+        margin: 10px 0 20px;
+      }
+
+      .detail-vendor {
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: #0f4181;
+        text-align: right;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -58,14 +68,78 @@
     >
       <div class="result-card text-center">
         <div class="card-body">
-          <h2 class="mb-4">Hasil Keputusan yang Diperlukan</h2>
-          <div class="result-box mb-4">
+          <h2 class="mb-4">Hasil Keputusan</h2>
+          <div class="result-box mb-2">
             {{jawaban}}
           </div>
+          <a
+            class="detail-vendor"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            Detail Vendor ->
+          </a>
           <hr class="divider" />
           <div class="d-flex justify-content-between">
             <a href="/proses" class="btn btn-primary">Kembali</a>
+
             <a href="/" class="btn btn-primary">Selesai</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Detail Vendor
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>Nama Vendor</td>
+                    <td>{{ nama }}</td>
+                  </tr>
+                  <tr>
+                    <td>Harga Pangung</td>
+                    <td>Rp. {{ harga }}</td>
+                  </tr>
+                  <tr>
+                    <td>Jarak Vendor</td>
+                    <td>{{ jarak }} kilometer</td>
+                  </tr>
+                  <tr>
+                    <td>Lama Waktu Pemasangan</td>
+                    <td>{{ waktu }} hari</td>
+                  </tr>
+                  <tr>
+                    <td>Inferensi Fuzzy</td>
+                    <td>{{ data }}</td>
+                  </tr>
+                  <tr>
+                    <th>Hasil Keputusan</th>
+                    <th>{{ jawaban }}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
