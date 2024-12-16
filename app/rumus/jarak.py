@@ -1,5 +1,5 @@
 # range keseluruhan 0 - 32
-max_jarak = 32
+max_jarak = 60
 min_jarak = 0
 # range tengah 28 - 32 
 max_tengah = 32
