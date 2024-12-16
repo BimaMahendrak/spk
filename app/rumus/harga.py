@@ -7,18 +7,18 @@ min_tengah = 8000000
 
 def murah(harga):
     # 0 - 12 juta
-    if harga <= min_tengah:
+    if harga < min_harga:
         return 1.0
-    elif harga >= max_tengah:
+    elif harga > max_tengah:
         return 0.0
     else:
-        return (max_harga-harga)/(max_harga-min_tengah)
+        return (max_tengah-harga)/(max_tengah-min_harga)
     
 def mahal(harga):
     # 8 juta - 20 juta
-    if harga <= max_tengah:
+    if harga < min_tengah:
         return 0.0
-    elif harga >= max_harga:
+    elif harga > max_harga:
         return 1.0
     else:
-        return (harga-max_tengah)/(max_harga-max_tengah)
+        return (harga-min_tengah)/(max_harga-min_tengah)

@@ -7,18 +7,18 @@ min_tengah = 1
 
 def cepat(waktu):
     # 0 - 2
-    if waktu <= min_tengah:
+    if waktu < min_waktu:
         return 1.0
-    elif waktu >= max_tengah:
+    elif waktu > max_tengah:
         return 0.0
     else:
-        return (max_waktu-waktu)/(max_waktu-min_tengah)
+        return (max_tengah-waktu)/(max_tengah-min_waktu)
     
 def lambat(waktu):
     # 1 - 3
-    if waktu <= max_tengah:
+    if waktu < min_tengah:
         return 0.0
-    elif waktu >= max_waktu:
+    elif waktu > max_waktu:
         return 1.0
     else:
-        return (waktu-max_tengah)/(max_waktu-max_tengah)
+        return (waktu-min_tengah)/(max_waktu-min_tengah)
